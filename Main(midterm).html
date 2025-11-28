@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Séquoia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', 'Cormorant Garamond', serif;
+      background-color: #DFF5E0;
+      color: #2C2C2C;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInPage 1.5s ease forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      position: fixed;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      z-index: 1000;
+      background:#1B3D2F ;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border-radius: 25px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-logo {
+      height: 45px;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-text {
+      color: #EAD9B7;
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+
+    .rate-btn {
+      background: #EAD9B7;
+      border: none;
+      color: #2C2C2C;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .rate-btn:hover {
+      background: #CBB48A;
+    }
+
+    header {
+      position: relative;
+      padding: 40px;
+      background:#2E5339;
+      border-radius: 0px 0px 50px 50px;
+      min-height: 1100px;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .header-content {
+      position: absolute;
+      top: 35%;
+      left: 80px;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      color: white;
+    }
+
+    .header-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      font-weight: 700;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      line-height: 1.1;
+    }
+
+    .header-video {
+      width: 650px;
+      height: 400px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      object-fit: cover;
+    }
+
+    .header-boxes {
+      position: absolute;
+      top: 830px;
+      left: 7%;
+      transform: translateX(5%);
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 320px; /* equal gap between boxes */
+      z-index: 3;
+    }
+
+    .header-box {
+      background: rgba(223, 245, 224, 0.5);
+      border-radius: 20px;
+      padding: 25px;
+      width: 400px;
+      height: 250px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .header-box2 {
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header-box2:hover {
+      background: #CBB48A;
+    }
+
+    .header-box:hover,
+    .header-box2:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+
+    .header-box h4
+     {
+     color: black;
+     font-size: 18px;
+      font-weight: 300;
+      margin: 0;
+    }
+    .header-box2 h2,
+    .header-box2 h4 {
+      color: black;
+      font-size:20px;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+      background: #DFF5E0;
+    }
+
+a {
+  text-decoration: none;
+  color: inherit; /* optional: keeps default text color */
+}
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="nav-logo">
+      <span class="nav-text">Le Séquoia</span>
+    </div>
+
+    <div class="nav-links">
+    <a href="Main(midterm).html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="on_the_go.html">Book a Table</a>
+      <a href="#contact">Contact</a>
+     <button class="rate-btn" onclick="location.href='#rate'">Rate Us</button>
+    </div>
+  </nav>
+  <header>
+<section>
+    <img src="bg.png" width="400" height="720">
+      <center>
+    <p style="font-style:italic; color:#DFF5E0;">
+      Press <kbd>M</kbd> to play or stop background music
+    </p>
+  </center>
+    <div class="header-content">
+      <div class="header-text">
+        Welcome to <br>Le Séquoia
+      </div>
+
+      <video class="header-video" autoplay muted loop>
+        <source src="vid1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="header-boxes">
+      <div class="header-box">
+        <h2>Our Menu</h2>
+        <h4>Explore our carefully curated menu featuring signature flavors, timeless classics, and seasonal delights made with love.</h4>
+        <div class="header-box2">
+          <a href="menu.html">
+          <h2>Menu</h2></a>
+        </div>
+      </div>
+
+      <div class="header-box">
+        <h2>Book a Table</h2>
+        <h4>Hungry but busy? Reserve your table now and enjoy a fresh, delicious meal without the wait!</h4>
+        <div class="header-box2">
+        <a href="on_the_go.html">
+          <h2>Book Now!</h2>
+        </a>
+        </div>
+      </div>
+    </div>
+    </section>
+  </header>
+
+  <main>
+  <style>
+.text-image-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px; /* space between items */
+      padding: 60px 80px;
+      background: #DFF5E0;
+}
+
+.text-block {
+      max-width: 400px;
+      text-align: justify;
+}
+
+.text-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #1B3D2F;
+      margin-bottom: 10px;
+}
+
+.text-block p {
+      font-size: 18px;
+      color: #2C2C2C;
+      line-height: 1.6;
+}
+
+.section-image {
+      width: 450px;
+      height: 350px;
+
+}
+.button {
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.button:hover {
+      background: #CBB48A;
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+.button h2 {
+      margin: 0;           /* removes default spacing */
+      line-height: 1.2;    /* keeps text vertically balanced */
+}
+
+
+</style>
+ <section class="text-image-section">
+  <div class="text-block">
+    <h2>Freshly Made for You</h2>
+    <p>
+      Every dish is crafted with passion using only the finest ingredients.
+      Taste the harmony of flavor, freshness, and love in every bite.
+    </p>
+
+    <div class="button">
+      <h2><a href ="Nutritional Info.html">Nutrition Info</a></h2>
+    </div>
+  </div>
+
+  <img src="ds2.png" alt="Delicious Food" class="section-image">
+
+  <div class="text-block">
+    <h2>Reserve a Table Anytime</h2>
+    <p>
+      Whether you’re joining us for a meal or celebrating a special occasion,
+      Le Séquoia brings comfort and flavor straight to your table. Reserve your spot today!
+
+    </p>
+  </div>
+</section>
+
+</main>
+<style>
+    main.find {
+      padding: 0px;
+      background: #1B3D2F;
+        display: flex;
+    }
+
+   .find {
+
+  align-items: left;
+  gap: 0px;
+  padding: 60px 80px;
+  background: #1B3D2F;
+}
+
+label.text-block h2 {
+ font-family: 'Ultra', serif;
+  font-size: 80px;
+  font-weight: 500;
+  color: #FFFFFF;
+ margin: 10px 0;
+}
+label.text-block h3 {
+ font-family: 'Ultra', serif;
+  font-size: 25px;
+  font-weight: 100;
+  color: #FFFFFF;
+ margin: 10px 0;
+}
+
+
+.location-input {
+  padding: 15px 15px;
+  border: none;
+  width: 80%;
+  border-radius: 10px;
+  outline: none;
+  background: #FFFFFF;
+  color: #1B3D2F;
+  transition: box-shadow 0.3s ease;
+   margin: 20px 0;
+   font-size:20px;
+}
+
+.location-input:focus {
+  box-shadow: 0 0 8px #CBB48A;
+}
+
+img.section-image {
+margin-top:60px;
+  width: 450px;
+
+
+}
+.but {
+  display: flex;
+  justify-content: start; /* aligns buttons to the right */
+  gap: 50px; /* space between buttons */
+  align-items: center;
+  /* vertically centers text and image */
+}
+.but button {
+  background-color: #EAD9B7;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex; /* allows image + text alignment */
+  align-items: center;
+  gap: 8px; /* space between image and text */
+  transition: all 0.3s ease;
+}
+
+.but button:hover {
+  background-color: #CBB48A;
+}
+
+.but button img {
+  width: 40px;   /* adjust as needed */
+
+}
+</style>
+
+<main class="find">
+<section class="find">
+<article class="text-block"
+  <div class="location-box">
+
+
+    <datalist id= "browsers">
+        <option value="City Of Sto.Tomas">
+        <option value="City Of Lipa">
+        <option value="Laguna">
+        <option value="Calamba">
+        <option value="Manila">
+        <option value="Pampanga">
+    </datalist>
+    </article>
+
+
+    <article id="location">
+    <label class="text-block"><h2> FIND Le Séquoia  </h2>
+    <label class="text-block"><h3> We are Open in the following places:</h3>
+    <input list ="browsers" name="myBrowser" class="location-input"/>
+    </label>
+<div class="but">
+    <button type="reset"><img src="resett.png" alt="Reset"> Reset</button>
+
+</div>
+    </article>
+  </div>
+
+  </section>
+  <img src="find.png" alt="restaurant" class="section-image">
+</main>
+
+<style>
+main.images{
+  padding: 0px;
+  background: #2E5339;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.images-image{
+  margin:10px 0;
+  width: 30%;
+}
+
+ruby {
+margin-top:30px;
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  background: #f0eee8;
+  padding: 10px 5px;
+  border-radius: 8px;
+  line-height: 1.2; /* tighter line spacing */
+}
+
+rt {
+  font-size: 0.9em;
+  color: #1B3D2F;
+  font-style: italic;
+  display: block;
+  margin: 0; /* remove default margins */
+  padding: 0;
+}
+
+rtc{
+  margin: 0; /* remove default margins */
+  padding: 0;
+  display: block;
+  font-size: 1em; /* adjust size to match layout */
+}
+
+/* Rate Us button */
+.rate-us {
+  text-align: center;
+  color: #fff;
+  font-size: 38px;
+  margin-top: 15px; /* small gap above button */
+}
+
+.rate-us button {
+  background-color: #1B3D2F;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+
+
+<main class="images" id="rate">
+
+  <article>
+    <center>
+      <ruby style="font-size:18px; color:#1B3D2F;">
+        <rb>私たちのウェブサイトをご覧いただきありがとうございます</rb>
+        <rt><h1>Watashitachi no webusaito o goran itadaki arigatō gozaimasu</h1></rt>
+        <rtc><h2>Thank you for checking our website</h2></rtc>
+
+        <div class="rate-us">
+    <div class="stars">
+      <span data-value="1">&#9733;</span>
+      <span data-value="2">&#9733;</span>
+      <span data-value="3">&#9733;</span>
+      <span data-value="4">&#9733;</span>
+      <span data-value="5">&#9733;</span>
+    </div>
+    <button id="submitRating">Rate Us</button>
+  </div>
+      </ruby>
+
+
+    </center>
+
+
+  </article>
+
+  <!-- Rate Us Section -->
+
+</main>
+
+<script>
+const stars = document.querySelectorAll('.stars span');
+let rating = 0;
+
+stars.forEach(star => {
+  star.addEventListener('mouseover', () => {
+    stars.forEach(s => s.style.color = '#ccc');
+    for(let i=0; i<star.dataset.value; i++){
+      stars[i].style.color = 'gold';
+    }
+  });
+
+  star.addEventListener('click', () => {
+    rating = star.dataset.value;
+    stars.forEach(s => s.classList.remove('selected'));
+    for(let i=0; i<rating; i++){
+      stars[i].classList.add('selected');
+    }
+  });
+});
+
+document.getElementById('submitRating').addEventListener('click', () => {
+  if(rating == 0){
+    alert('Please select a rating before submitting!');
+  } else {
+    alert(`Thanks for rating us ${rating} star(s)!`);
+  }
+});
+</script>
+
+
+
+  <style>
+  .scroll-banner {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 40px 0;
+  background: transparent; /* optional */
+}
+
+.scroll-content {
+  display: inline-flex;
+  gap: 20px;
+  animation: scroll 12s linear infinite;
+}
+
+.scroll-content img {
+  height: 50px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+main.banner{
+      padding: 10px;
+      background: #2E5339;
+
+}
+  </style>
+
+<main class="banner">
+
+<div class="scroll-banner">
+  <div class="scroll-content">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+        <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+        <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+        <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+        <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+    <img src="banner.png" height="50">
+  </div>
+</div>
+</main>
+
+
+
+<style>
+/* ===== FOOTER SECTION 1 ===== */
+main.footer {
+  padding: 50px;
+  background: #1B3D2F;
+  display: flex;
+  flex-wrap: wrap;      /* responsive rows */
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer_container {
+  width: 100%;
+}
+
+.image img {
+  height: 100px;
+  width: auto;
+}
+
+.image {
+  margin: 20px;
+}
+
+.image2 img {
+  max-width: 150px;
+  height: auto;
+}
+
+.about-us {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #f0eee8;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.text {
+  font-size: 18px;
+  color: #f0eee8;
+  margin-top: 5px;
+}
+
+/* ===== FOOTER SECTION 2 ===== */
+main.footer2 {
+  padding: 40px 20px;
+  background: #1B3D2F;
+  display: flex;
+  flex-wrap: wrap;      /* responsive */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.icons a {
+  font-size: 30px;
+  color: #CBB48A;
+  margin: 0 15px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.icons a:hover {
+  color: #ffffff;
+}
+
+.text2 a {
+  font-size: 18px;
+  color: #CBB48A;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.text2 a:hover {
+  color: #ffffff;
+}
+
+.text3 {
+  font-size: 18px;
+  color: #CBB48A;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  main.footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .row {
+    min-width: 140px;
+  }
+
+  .about-us {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main.footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .image img {
+    height: 80px;
+  }
+
+  .about-us {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .icons a {
+    font-size: 26px;
+  }
+
+  .text2 a,
+  .text3 {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+#location{
+scroll-margin-top: 180px;
+}
+</style>
+
+<div class="footer_container">
+  <main class="footer" id="contact">
+
+    <div class="image"><img src="logo.png"></div>
+
+    <div class="row">
+      <div class="about-us">ABOUT US</div>
+      <div class="text"><a href="Apply.html">Apply</a></div>
+      <div class="text"><a href="#location">Location</a></div>
+    </div>
+
+    <div class="row">
+      <div class="about-us">MENU</div>
+      <div class="text"><a href="menu.html">Menu</a></div>
+      <div class="text"><a href="Nutritional Info.html">Nutritional</a></div>
+      <div class="text"><a href="Nutritional Info.html">Allergens</a></div>
+    </div>
+
+    <div class="row">
+      <div class="about-us">MORE</div>
+      <div class="text"><a href="on_the_go.html">BOOK NOW!</a></div>
+      <div class="text"><a href="#rate">Rate Us</a></div>
+    </div>
+
+    <div class="row image2">
+      <img src="items.gif" alt="animation">
+    </div>
+
+  </main>
+</div>
+
+<main class="footer2">
+  <div class="icons">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://instagram.com/samrenly.cruzado" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/samrenly.cruzado" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <div class="text2">
+    <a href="#">Terms and Conditions</a>
+  </div>
+
+  <div class="text3">
+    © 2025 Le Séquoia | Crafted with passion and flavor
+  </div>
+</main>
+
+
+
+ <audio id="bgMusic" loop>
+            <source src="audio.mp3" type="audio/mpeg">
+            <source src="music.ogg" type="audio/ogg">
+          </audio>
+
+<script>
+
+
+
+    const music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "m" || event.key === "M") {
+        alert("M was pressed — the music will play or stop ");
+        if (!isPlaying) {
+          music.play();
+          isPlaying = true;
+        } else {
+          music.pause();
+          isPlaying = false;
+        }
+      }
+    });
+    </script>
+
+</body>
+</html>
+

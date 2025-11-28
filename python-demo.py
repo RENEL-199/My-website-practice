@@ -1,0 +1,11 @@
+print("welcome to nels coffe shop")
+name=input ("please enter your name: ")
+drink=input ("please enter your drink: ")
+flavor=input("please enter your flavor: ")
+topping=input("please enter your topping: ")
+print("here is your order ", name)
+print("main prodcut: ", drink)
+print("flavor: ", flavor)
+print("Topping: ", topping)
+print("Thank you for ordering")
+

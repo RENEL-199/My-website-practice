@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Séquoia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', 'Cormorant Garamond', serif;
+      background-color: #DFF5E0;
+      color: #2C2C2C;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+        opacity: 0;
+
+
+    animation: fadeInPage 1.5s ease forwards;
+
+    }
+    @keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+    em { background: #81C784; }
+    strong { background: #C9E4C5; color: #1B3D2F; }
+     p#hotel {
+      font: 2.5em sans-serif;
+      cursor: pointer;
+    }
+    p#clear {
+      font: 1.5em sans-serif;
+      width: 100px;
+      border: 1px solid;
+      background: orange;
+      cursor: pointer;
+      margin: 10px auto;
+    }
+    img.star-img {
+      width: 30px;
+      vertical-align: middle;
+    }
+
+
+    header1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 35px;
+      font-weight: 20px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #FFFFFF;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      background: linear-gradient(90deg, #2B4D3E, #2E5339);
+      color: #EAD9B7;
+      padding: 25px 50px;
+      height: 120px;
+      animation: fadeIn 1s ease;
+    }
+    .logo img {
+      height: 70px;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover { transform: scale(1.05); }
+    .banner-text {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #EAD9B7;
+    }
+    .subtext {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: #EAD9B7;
+      opacity: 0.8;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #1B3D2F;
+      padding: 1em 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 5px;
+    }
+    nav a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+
+    nav1 {
+      display: block;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #81C784;
+      padding: 1em 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+    nav1 a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 5px;
+    }
+    nav1 a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+    article {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    video {
+      display: block;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 30px auto;
+    }
+    figure.side-figure {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: #E2F0E1;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin: 25px 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    figure.side-figure img {
+      width: 30%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    figure.side-figure figcaption {
+      width: 70%;
+    }
+    figcaption h3 {
+      color: #1B3D2F;
+      margin-bottom: 5px;
+    }
+    figure:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    aside strong {
+      background: none;
+      color: #1B3D2F;
+      font-size: 16px;
+    }
+    table {
+      width: 90%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background: #F9FFF7;
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    th {
+      background-color: #2B4D3E;
+      color: #fff;
+      padding: 15px;
+      letter-spacing: 1px;
+    }
+    td {
+      text-align:center;
+      padding: 12px;
+      color: #333;
+    }
+    tr:nth-child(even) {
+      background: #f6f6f6;
+    }
+    .menu {
+      color: #2e5339;
+      font-weight: bold;
+    }
+    #links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    iframe {
+      border-radius: 10px;
+      border: 2px solid #2e5339;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #1B3D2F;
+      color: #EAD9B7;
+      font-size: 0.95em;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease;
+    }
+    footer:hover {
+      background-color: #2B4D3E;
+      transition: 0.3s;
+    }
+    ruby {
+      display: inline-block;
+      margin-left: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      background: #f0eee8;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    rt {
+      font-size: 0.9em;
+      color: #1B3D2F;
+      font-style: italic;
+    }
+    address{
+      color: #EAD9B7;
+    }
+ .rate-btn {
+      background: #1B3D2F;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .rate-btn:hover {
+      background: #2E7D32;
+    }
+
+    /* --- Star Rating Styles --- */
+    p#hotel {
+      font: 2em sans-serif;
+      cursor: pointer;
+    }
+    p#clear {
+      font: 1.2em sans-serif;
+      width: 100px;
+      border: 1px solid;
+      background: orange;
+      cursor: pointer;
+      margin: 10px auto;
+    }
+    img.star-img {
+      width: 30px;
+      vertical-align: middle;
+    }
+
+    /* --- Dialog Box --- */
+    dialog {
+      border: none;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 350px;
+    }
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .close-btn {
+      margin-top: 10px;
+      background: #e53935;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    meter {
+      width: 300px;
+      height: 30px;
+    }
+
+    #progressContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255,255,255,0.3);
+  z-index: 2000;
+}
+
+#progressBar {
+  height: 8px;
+  width: 0%;
+  background-color: #EAD9B7;
+  transition: width 0.2s ease;
+}
+blockquote {
+  background-color: #F5E9D3;
+  padding: 25px;
+  border-left: 4px solid #2E5339;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #2E5339;
+  margin: 30px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+blockquote:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+
+
+      </style>
+</head>
+<body>
+  <header>
+    <div class="banner">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <div class="banner-text">Le Séquoia</div>
+      <div class="subtext"><p>A Website Restaurant based on Chef RPG</p></div>
+    </div>
+    <nav>
+      <a href="#welcome">Welcome</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="rate-btn" id="openDialog">Rate Us</button>
+    </nav>
+  </header>
+<div id="progressContainer">
+  <div id="progressBar"></div>
+</div>
+  <center><p style="font-style:italic; color:#1B3D2F;">
+    Press <kbd>M</kbd> to play or stop background music
+  </p></center>
+
+  <main>
+    <section id="welcome">
+      <article>
+        <h2>Welcome to Le Séquoia</h2>
+        <p>At Le Séquoia, every dish tells a story — one of <em>passion</em>, <em>flavor</em>, and <em>timeless elegance</em>.<br>
+        We celebrate the art of fine dining through carefully crafted recipes that blend tradition and creativity.</p>
+        <p>Whether you join us for an intimate dinner, a family gathering, or a taste of something new, our table is always set with warmth and authenticity.<br>
+        Savor the experience. Embrace the flavor. Welcome to Le Séquoia.</p>
+        <video src="vid1.mp4" controls autoplay muted loop></video>
+      </article>
+    </section>
+
+    <section id="menu">
+      <article>
+        <header1><center><u>MENU</u></center></header1>
+            <nav1>
+      <a href="#appitizers">Appitizers</a>
+      <a href="#main">Main Course</a>
+      <a href="#beverages">Beverages</a>
+      <a href="#Desserts">Desserts</a>
+    </nav1>
+        <h5><center><em><q>Please feel free to enjoy checking our menu</q></em></center></h5>
+        <h3 id="appitizers"><u>Appitizers</u></h3>
+
+        <figure class="side-figure">
+          <img src="ap1.png" alt="Daikon With Mango Confit">
+          <figcaption>
+            <h3>Daikon With Mango Confit <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A delicate harmony of East and West — crisp, tender daikon radish gently poached to preserve its subtle sweetness, paired with a velvety mango confit for a tropical contrast.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+
+              <ul style="list-style-type:square">
+                <li>Daikon Radish</li>
+                <li>Mango</li>
+                <li>Watercress</li>
+                <li>Sake</li>
+                <li>Flour</li>
+              </ul>
+            </details>
+            <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="80"> 40 </meter>
+                <h3> 150 cal. </h1>
+                </details>
+
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="ap2.png" alt="Stuffed Bell Pepper">
+          <figcaption>
+            <h3>Stuffed Bell Pepper <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>Vibrant bell peppers filled with roasted vegetables and cheese, baked until perfectly caramelized and finished with tomato coulis and olive oil.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Bell Pepper</li>
+                <li>Chili</li>
+                <li>Squash</li>
+                <li>Cheese</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="70"> 40 </meter>
+                <h3> 150 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="ap3.png" alt="Crab Soup">
+          <figcaption>
+            <h3>Crab Soup <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A silky broth of fresh blue crab, herbs, and cream — a delicate sweetness of the sea, finished with herb oil for a luxurious warmth.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Crab Meat</li>
+                <li>Cream</li>
+                <li>Wild Tomato</li>
+                <li>Cheese</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="60"> 60 </meter>
+                <h3> 170 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+            <hr>
+         <h3 id="main"><u>Main Course</u></h3>
+
+        <figure class="side-figure">
+          <img src="mc1.png" alt="Daikon With Mango Confit">
+          <figcaption>
+            <h3>Beef Wellington<aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A classic and elegant dish, Beef Wellington is known for its tender, perfectly cooked center wrapped in a delicate, golden crust. Often served as a centerpiece for special occasions, it combines rich flavors with a sophisticated presentation that impresses at any dining table.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Wagyu Steak</li>
+                <li>Boar Meat</li>
+                <li>Flour</li>
+                <li>Red Wine</li>
+                <li>Mushroom</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="40"> 40 </meter>
+                <h3> 150 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="mc2.png" alt="Stuffed Bell Pepper">
+          <figcaption>
+            <h3>Chalice of the Seven Seas <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>An extraordinary main course inspired by the bounty of the ocean, Chalice of the Seven Seas presents a harmonious blend of flavors and textures. Artfully crafted and elegantly plated, it offers a memorable dining experience that captures the essence of the sea.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Sea Urchin</li>
+                <li>Salmon Roe</li>
+                <li>Watercress</li>
+                <li>Cranberry</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="40"> 40 </meter>
+                <h3> 95 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="mc3.png" alt="Crab Soup">
+          <figcaption>
+            <h3>Ratatouille <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A vibrant and hearty vegetable dish, Ratatouille is a celebration of fresh, seasonal flavors layered together in a beautifully arranged presentation. It’s a comforting yet elegant main course that delights both the eyes and the palate.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Wild Tomato</li>
+                <li>Squash</li>
+                <li>Eggplant</li>
+                <li>Bell Pepper</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="20"> 40 </meter>
+                <h3> 15 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+
+           <hr>
+         <h3 id="beverages"><u>Beverages</u></h3>
+        <figure class="side-figure">
+          <img src="b1.png" alt="Daikon With Mango Confit">
+          <figcaption>
+            <h3>Spicy Mango Sake Cocktail <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A bold fusion of sweet and heat, the Spicy Mango Sake Cocktail offers a refreshing tropical twist with a subtle kick. Its smooth balance of fruit and spice makes it an irresistible choice for those seeking something adventurous and sophisticated.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Mango</li>
+                <li>Chili</li>
+                <li>Sake</li>
+                <li>Rum</li>
+                <li>Honey</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="40"> 40 </meter>
+                <h3> 123 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="b2.png" alt="Stuffed Bell Pepper">
+          <figcaption>
+            <h3> Sangria <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A timeless and refreshing classic, Sangria combines vibrant fruit flavors with a smooth, elegant finish. Perfect for any occasion, it captures the spirit of celebration with its rich color, inviting aroma, and perfectly balanced taste.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Red Wine</li>
+                <li>Orange</li>
+                <li>Red Apple</li>
+                <li>Cranberry</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="40"> 40 </meter>
+                <h3> 112 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="b3.png" alt="Crab Soup">
+          <figcaption>
+            <h3>Cherry Cocktail <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A delightful blend of sweetness and elegance, the Cherry Cocktail offers a burst of rich cherry flavor in every sip. Its bright color and smooth finish make it a charming choice for those who enjoy a touch of sophistication in their drink.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Cherry/li>
+                <li>Vodka</li>
+                <li>Sugar Cane</li>
+              </ul>
+            </details>
+             <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="40"> 40 </meter>
+                <h3> 75 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+
+
+
+
+        <hr>
+        <h3 id="Desserts"><u>Desserts</u></h3>
+
+        <figure class="side-figure">
+          <img src="ds1.png" alt="Icy Chocolate Storm">
+          <figcaption>
+            <h3>Icy Chocolate Storm <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>An indulgent fusion of cool elegance and rich intensity — bold, smooth, and irresistibly timeless.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Dark Chocolate</li>
+                <li>Cream</li>
+                <li>Coffee Beans</li>
+                <li>Cinnamon</li>
+              </ul>
+            </details>
+            <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="100"> 40 </meter>
+                <h3> 175 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="ds2.png" alt="Cocoa Orange Cake">
+          <figcaption>
+            <h3>Cocoa Orange Cake <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A harmonious blend of cocoa richness and bright citrus — a dessert that’s both comforting and captivating.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Dark Chocolate</li>
+                <li>Cream</li>
+                <li>Orange</li>
+                <li>Flour</li>
+              </ul>
+            </details>
+            <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="70"> 40 </meter>
+                <h3> 155 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+
+        <figure class="side-figure">
+          <img src="ds3.png" alt="Cranberry Cheesecake">
+          <figcaption>
+            <h3>Cranberry Cheesecake <aside><strong>300<sub>php</sub></strong></aside></h3>
+            <blockquote>A graceful balance of smooth creaminess and tart cranberry — refined sweetness in every bite.</blockquote>
+            <details>
+              <summary>Ingredients</summary>
+              <ul style="list-style-type:square">
+                <li>Cranberry</li>
+                <li>Cream</li>
+                <li>Flour</li>
+                <li>Honey</li>
+              </ul>
+            </details>
+            <details>
+                <summary> Calories</summary>
+                <meter min = "0" low = "15" max = "100" optinum="100" value="80"> 40 </meter>
+                <h3> 175 cal. </h1>
+                </details>
+          </figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section id="about">
+      <article>
+        <h1>Le Séquoia Schedule</h1>
+        <table>
+          <tr><th>DAY</th><th>TIME</th><th>SPECIAL MENU</th></tr>
+          <tr><td>Monday</td><td>8:00 - 19:00</td><td class="menu">Daikon With Mango Confit</td></tr>
+          <tr><td>Tuesday</td><td>6:00 - 15:00</td><td class="menu">Cocoa Orange Cake</td></tr>
+          <tr><td>Wednesday</td><td>7:00 - 13:00</td><td class="menu">Cranberry Cheesecake</td></tr>
+          <tr><td>Thursday</td><td>10:00 - 14:00</td><td class="menu"><del>Crab Soup</del> <pre>^-^</pre>Shirmp Cocktail</td></tr>
+          <tr><td>Friday</td><td>15:00 - 21:00</td><td class="menu">Stuffed Bell Pepper</td></tr>
+        </table>
+         <aside> <center>The Special Menu change every <strong>WEEK<strong>, so make sure to Stay tuned!!</center><br>
+         </aside>
+
+
+        <center><h2>Map</h2>
+        <img src="map.png" width="900" height="500" alt="Map" usemap="#search"></center>
+        <map name="search">
+          <area shape="rect" coords="80,200,200,50" href="https://chefrpg.wiki.gg/wiki/April%27s_House" alt="April's House" title="Green House">
+          <area shape="rect" coords="600,200,50,50" href="https://chefrpg.wiki.gg/wiki/Aloys%27_House" alt="Aloys' House" title="House Link">
+          <area shape="rect" coords="700,300,300,50" href="https://chefrpg.wiki.gg/wiki/Le_Sequoia" alt="Le Séquoia" title="Le Séquoia Link">
+        </map>
+
+        <h2>About This Website</h2>
+        <p>Welcome to Le Séquoia, a fan-made restaurant and shopping website inspired by the world of Chef RPG. Every dish and ingredient featured here is lovingly recreated from the game’s official wiki, brought to life through elegant design and immersive presentation.</p>
+
+        <p id="links"><a href="javascript:toggleWiki()">Show the Reference</a></p>
+        <article id="frame" style="display: none;"><center>
+          <h2>The Wiki</h2>
+          <iframe src="https://chefrpg.wiki.gg/" width="600" height="400" title="Chef RPG Wiki"></iframe>
+          <audio id="bgMusic" loop>
+            <source src="audio.mp3" type="audio/mpeg">
+            <source src="music.ogg" type="audio/ogg">
+          </audio>
+        </center></article>
+
+     <p id="links"><a href="javascript:togglePDF()">Show the Permit</a></p>
+
+<article id="permitSection" style="display: none;">
+  <center>
+    <h2>Business Permit</h2>
+    <object data="pdf.pdf" type="application/pdf" width="500" height="350">
+      <p>Your browser does not support PDFs.
+         <a href="pdf.pdf">Download the file instead.</a>
+      </p>
+    </object>
+  </center>
+</article>
+
+    <article>
+    <center><ruby style="font-size:18px; color:#1B3D2F;">
+      <rb><center>私たちのウェブサイトをご覧いただきありがとうございます </rb>
+      <rt><h1> Watashitachi no webusaito o goran itadaki arigatō gozaimasu</h1></rt>
+      <rtc><h2>Thank you for checking our website</h2></rtc>
+    </ruby></center>
+    </article>
+
+
+    <h2 id="contact">Contact us: </h2>
+    <ul style="list-style-image: url('email.png');">
+      <li><address><a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com,"> samrenlyc@gmail.com </a></address></li>
+    </ul>
+  </main>
+  <marquee><img src = "banner.png" alt = "wallpaper" height='50'><img src = "banner.png" alt = "wallpaper" height='50'> </marquee>
+
+
+
+
+    <dialog id="rateDialog">
+    <h3>Rate Le Séquoia</h3>
+    <p id="hotel" onclick="addStar()">Click to add star ⭐</p>
+    <p id="clear" onclick="removeStars()">Clear</p>
+
+    <template id="star">
+      <img class="star-img" src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="star">
+    </template>
+
+    <button class="close-btn" id="closeDialog">Close</button>
+    <p id="ratingValue" style="font-weight:bold; color:#2E5339;"></p>
+  </dialog>
+
+  <footer>
+    © 2025 Le Séquoia | Crafted with passion and flavor
+  </footer>
+
+  <script>
+    function toggleWiki() {
+      const frame = document.getElementById("frame");
+      frame.style.display = (frame.style.display === "none") ? "block" : "none";
+    }
+
+    function togglePDF() {
+  const permit = document.getElementById("permitSection");
+  permit.style.display = (permit.style.display === "none") ? "block" : "none";
+    }
+
+
+
+    const music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "m" || event.key === "M") {
+        alert("M was pressed — the music will play or stop ");
+        if (!isPlaying) {
+          music.play();
+          isPlaying = true;
+        } else {
+          music.pause();
+          isPlaying = false;
+        }
+      }
+    });
+
+       const rateDialog = document.getElementById('rateDialog');
+    document.getElementById('openDialog').addEventListener('click', () => rateDialog.showModal());
+    document.getElementById('closeDialog').addEventListener('click', () => rateDialog.close());
+
+
+    let rating = 0;
+    const hotel = document.getElementById('hotel');
+    const ratingValue = document.getElementById('ratingValue');
+    const starTemplate = document.getElementById('star').content.firstElementChild;
+
+    function addStar() {
+      if (rating < 5) {
+        const newStar = starTemplate.cloneNode(true);
+        hotel.appendChild(newStar);
+        rating++;
+        ratingValue.textContent = `You rated us ${rating}/5 ⭐`;
+      } else {
+        alert("Maximum rating is 5 stars!");
+      }
+    }
+
+    function removeStars() {
+      hotel.innerHTML = "Click to add star ⭐";
+      rating = 0;
+      ratingValue.textContent = "";
+    }
+    window.addEventListener('scroll', () => {
+      const menuSection = document.getElementById('menu');
+      const progressBar = document.getElementById('progressBar');
+
+
+      const rect = menuSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const totalHeight = menuSection.scrollHeight;
+
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const visibleHeight = Math.min(windowHeight - rect.top, totalHeight);
+        const progress = Math.min((visibleHeight / totalHeight) * 100, 100);
+        progressBar.style.width = progress + '%';
+      } else if (rect.top >= windowHeight) {
+        progressBar.style.width = '0%';
+      } else if (rect.bottom <= 0) {
+        progressBar.style.width = '100%';
+      }
+    });
+
+    const logo = document.querySelector('.logo img');
+  let originalLogo = 'logo.png';
+  let altLogo = 'logo2.webp';
+  let isOriginal = true;
+
+  logo.addEventListener('click', function() {
+    if (isOriginal) {
+      logo.src = altLogo;
+    } else {
+      logo.src = originalLogo;
+    }
+    isOriginal = !isOriginal;
+  });
+
+
+
+
+  </script>
+</body>
+</html>

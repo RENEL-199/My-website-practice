@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Séquoia</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🌿 General Style */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #DFF5E0;
+      color: #2C2C2C;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: #1B3D2F;
+    }
+
+    em { background: #A8E6A3; padding: 2px 6px; border-radius: 4px; }
+    strong { color: #1B3D2F; }
+
+    /* ✨ Banner Section */
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      background: linear-gradient(120deg, #2B4D3E, #81C784);
+      color: #EAD9B7;
+      padding: 25px 50px;
+      height: 140px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    .logo img {
+      height: 80px;
+      filter: drop-shadow(0 0 6px rgba(0,0,0,0.4));
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover { transform: scale(1.08); }
+
+    .banner-text {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Great Vibes', cursive;
+      font-size: 58px;
+      color: #F4E1C1;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .subtext {
+      position: absolute;
+      top: 78%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 15px;
+      color: #f0f0f0;
+      opacity: 0.9;
+      letter-spacing: 0.5px;
+    }
+
+    /* 🍽️ Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #1B3D2F;
+      padding: 1em 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 25px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 6px;
+    }
+
+    nav a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+
+    /* 🥂 Rate Us Button */
+    .rate-btn {
+      background: #EAD9B7;
+      color: #1B3D2F;
+      border: none;
+      padding: 10px 22px;
+      margin-left: 15px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .rate-btn:hover {
+      background: #F4E1C1;
+      transform: scale(1.05);
+    }
+
+    /* 📦 Main Content */
+    main {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 40px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    video {
+      display: block;
+      width: 90%;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    figure.side-figure {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin: 30px 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    figure.side-figure:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    figure.side-figure img {
+      width: 30%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    figcaption h3 {
+      color: #2E5339;
+      font-weight: 700;
+    }
+
+    details summary {
+      font-weight: 600;
+      color: #1B3D2F;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    /* 📊 Table */
+    table {
+      width: 90%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background: #F9FFF7;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+      background-color: #2B4D3E;
+      color: #fff;
+      padding: 15px;
+      letter-spacing: 1px;
+    }
+
+    td {
+      text-align: center;
+      padding: 12px;
+      color: #333;
+    }
+
+    tr:nth-child(even) { background: #f3f9f4; }
+
+    /* 💬 Dialog Box */
+    dialog {
+      border: none;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      background: #fff;
+      text-align: center;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 15px 0;
+    }
+
+    .stars span {
+      font-size: 32px;
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .stars span.active, .stars span:hover, .stars span:hover ~ span { color: gold; }
+
+    .close-btn {
+      background: #e53935;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* 🎵 Meter */
+    meter {
+      width: 250px;
+      height: 20px;
+      border-radius: 8px;
+    }
+
+    /* 🌸 Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #1B3D2F;
+      color: #EAD9B7;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+      margin-top: 60px;
+    }
+
+    footer:hover {
+      background-color: #2B4D3E;
+      transition: background 0.4s;
+    }
+
+    /* ✨ Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="banner">
+      <div class="logo"><img src="logo.png" alt="Logo"></div>
+      <div class="banner-text">Le Séquoia</div>
+      <div class="subtext">A Restaurant Inspired by Chef RPG</div>
+    </div>
+
+    <nav>
+      <a href="#welcome">Welcome</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="rate-btn" id="openDialog">Rate Us</button>
+    </nav>
+  </header>
+
+  <center><p style="font-style:italic; color:#1B3D2F;">Press <kbd>M</kbd> to play or stop background music</p></center>
+
+  <!-- MAIN CONTENT -->
+  <main id="welcome">
+    <h1>Welcome to Le Séquoia</h1>
+    <p>Experience a harmonious blend of nature and cuisine. Indulge in every dish made with love, art, and passion.</p>
+
+    <video src="video.mp4" autoplay muted loop></video>
+
+    <h2 id="menu">Featured Dishes</h2>
+    <figure class="side-figure">
+      <img src="beefwellington.jpg" alt="Beef Wellington">
+      <figcaption>
+        <h3>Beef Wellington</h3>
+        <p>A British classic — tender beef wrapped in golden pastry, served with a rich sauce.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="side-figure">
+      <img src="ratatouille.jpg" alt="Ratatouille">
+      <figcaption>
+        <h3>Ratatouille</h3>
+        <p>A French vegetable medley full of color and heart, a true celebration of simplicity.</p>
+      </figcaption>
+    </figure>
+
+    <p><a href="javascript:togglePDF()">Show the Permit</a></p>
+    <article id="permitSection" style="display:none;">
+      <center>
+        <h2>Business Permit</h2>
+        <object data="pdf.pdf" type="application/pdf" width="500" height="350">
+          <p>Your browser does not support PDFs.
+            <a href="pdf.pdf">Download the file instead.</a>
+          </p>
+        </object>
+      </center>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>© 2025 Le Séquoia | Crafted with passion and flavor</footer>
+
+  <!-- RATE US DIALOG -->
+  <dialog id="rateDialog">
+    <h3>Rate Us</h3>
+    <div class="stars" id="starContainer">
+      <span data-value="1">&#9733;</span>
+      <span data-value="2">&#9733;</span>
+      <span data-value="3">&#9733;</span>
+      <span data-value="4">&#9733;</span>
+      <span data-value="5">&#9733;</span>
+    </div>
+    <p id="ratingText">Select your rating</p>
+    <button class="close-btn" id="closeDialog">Close</button>
+  </dialog>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgmusic" src="music.mp3" autoplay loop></audio>
+
+  <script>
+    // Music Toggle
+    const music = document.getElementById('bgmusic');
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'm') {
+        if (music.paused) music.play();
+        else music.pause();
+      }
+    });
+
+    // PDF Toggle
+    function togglePDF() {
+      const permit = document.getElementById("permitSection");
+      permit.style.display = (permit.style.display === "none") ? "block" : "none";
+    }
+
+    // Rate Dialog Logic
+    const dialog = document.getElementById('rateDialog');
+    const openBtn = document.getElementById('openDialog');
+    const closeBtn = document.getElementById('closeDialog');
+    const stars = document.querySelectorAll('.stars span');
+    const ratingText = document.getElementById('ratingText');
+
+    openBtn.onclick = () => dialog.showModal();
+    closeBtn.onclick = () => dialog.close();
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        let rating = star.dataset.value;
+        stars.forEach(s => s.classList.remove('active'));
+        for (let i = 0; i < rating; i++) stars[i].classList.add('active');
+        ratingText.textContent = `You rated us ${rating} star${rating > 1 ? 's' : ''}!`;
+      });
+    });
+  </script>
+</body>
+</html>

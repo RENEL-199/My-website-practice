@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@600&family=Great+Vibes&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+      font-family: 'Poppins', 'Cormorant Garamond', serif;
+      background-color: #DFF5E0;
+      color: #2C2C2C;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInPage 1.5s ease forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+       width: 93%;
+        height:3%;
+      z-index: 1000;
+      background:#1B3D2F ;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border-radius: 25px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-logo {
+      height: 45px;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-text {
+      color: #EAD9B7;
+      font-family: 'Great Vibes', cursive;
+      font-size: 25px;
+      letter-spacing: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+
+    .rate-btn {
+      background: #EAD9B7;
+      border: none;
+      color: #2C2C2C;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .rate-btn:hover {
+      background: #CBB48A;
+    }
+    main {
+      padding: 20px;
+      background: #DFF5E0;
+    }
+
+    </style>
+    </head>
+
+<body>
+<div class="nav-bg"></div>
+
+<style>
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      background: linear-gradient(90deg, #2B4D3E, #2E5339);
+      color: #EAD9B7;
+      padding: 20px 100px;
+      height: 65px;
+      animation: fadeIn 1s ease;
+    }
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      font-family: 'Cinzel', serif;
+      font-size: 40px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: #EAD9B7;
+    }
+
+</style>
+<main class="banner">
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="nav-logo">
+      <span class="nav-text">Le Séquoia</span>
+    </div>
+
+    <div class="nav-links">
+    <a href="Main(midterm).html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="on_the_go.html">Book A Table</a>
+      <a href="#contact">Contact</a>
+      <button class="rate-btn" onclick="location.href='Main(midterm).html#rate'">Rate Us</button>
+    </div>
+  </nav>
+    <div class="banner-text"> Table Reservation </div>
+</main>
+
+<style>
+main.body {
+  font-family: 'Poppins', 'Cormorant Garamond', serif;
+  background-color: #DFF5E0;
+  color: #2C2C2C;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInPage 1.5s ease forwards;
+}
+
+.text-image-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 80px;
+  background: #DFF5E0;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.section-image {
+  width: 450px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.text-block {
+  max-width: 500px;
+  text-align: left;
+  flex: 1;
+}
+
+.text-block h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #1B3D2F;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form.new {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="time"],
+form input[type="date"],
+form input[type="range"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+form input[type="color"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  background: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input[type="color"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 15px;
+  padding: 12px 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-size: 18px;
+  color: #1B3D2F;
+  border: none;
+}
+
+.button:hover {
+  background: #CBB48A;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .text-image-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .section-image {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+  .text-block {
+    max-width: 100%;
+  }
+}
+
+.image-table-wrapper {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  gap: 20px; /* space between image and table */
+}
+
+.info-table {
+  border-collapse: collapse;
+  width: 100%;
+  background:#F9FFF7;
+  max-width: 500px; /* match form or image width */
+}
+
+.info-table th, .info-table td {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.info-table th {
+  background-color: #2B4D3E;
+  color: #fff;
+}
+
+.info-table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+
+/* Optional styling to match your button style */
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 130px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: vertical; /* allows vertical resizing only */
+  margin-bottom: 15px;
+}
+
+.button-1 {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 15px;
+  width: 100%;
+  padding: 12px 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-size: 18px;
+  color: #1B3D2F;
+  border: none;
+}
+.button-1:hover {
+  background: #CBB48A;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+form .button:hover {
+  background: #CBB48A;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.gender-options {
+  display: flex;
+  gap: 20px; /* space between options */
+  margin-bottom: 15px;
+}
+
+.gender-options label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between radio and text */
+}
+
+fieldset {
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  padding: 20px 30px;
+  background-color: #DFF5E0;
+  box-shadow: 0 4px 6px rgba(0.9, 0.9, 0.9, 0.9);
+}
+
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4CAF50;
+  padding: 0 10px;
+}
+</style>
+
+<main class="body">
+  <section class="text-image-section">
+
+    <div class="image-table-wrapper">
+  <img src="book.png" alt="Main Image" class="section-image">
+
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Available Tables</th>
+        <th>Special Menu</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>6:00 AM</td>
+        <td>6</td>
+        <td>Daikon With Mango Confit</td>
+      </tr>
+      <tr>
+        <td>8:00 AM</td>
+        <td>3</td>
+        <td>Beef Wellington</td>
+      </tr>
+      <tr>
+        <td>12:00 PM</td>
+        <td>5</td>
+        <td>Cocoa Orange Cake</td>
+      </tr>
+      <tr>
+        <td>1:00 PM</td>
+        <td>3</td>
+        <td>Cranberry Cheesecake</td>
+      </tr>
+      <tr>
+        <td>2:00 PM</td>
+        <td>4</td>
+        <td>Ratatouille</td>
+      </tr>
+
+      <tr>
+        <td>3:00 PM</td>
+        <td>9</td>
+        <td>Super Sushi Set</td>
+      </tr>
+
+      <tr>
+        <td>8:00 PM</td>
+        <td>2</td>
+        <td>Clam Pizza</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+ <label for="futureWeb">Do you want any suggestions or requests?</label>
+      <textarea id="futureWeb" name="futureWeb" rows="7" cols="60" placeholder="Input it here..." form="reservationForm"></textarea>
+      <input class="button-1" type="reset" value="Reset Form" form="reservationForm">
+    </div>
+
+    <div class="text-block">
+      <fieldset>
+        <legend><h2>Reserve Your Table</h2></legend>
+        <form id="reservationForm" method="GET" action="Receipt.html">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="gender">Gender:</label>
+          <div class="gender-options">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+
+          <label for="contact">Contact Number:</label>
+          <input type="text" id="contacts" name="contact" maxlength="11" required>
+
+          <label for="zip">Zip Code:</label>
+          <input type="text" id="zip" name="zip" maxlength="5" required>
+
+          <label for="color">Table Color:</label>
+          <input type="color" id="color" name="color">
+
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time">
+
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date">
+
+          <label for="quantity">Number of People:</label>
+          <input type="range" id="quantity" name="quantity" min="1" max="20" value="5" oninput="document.getElementById('quantityValue').textContent = this.value">
+          <span id="quantityValue">5</span>
+
+          <button class="button" type="submit">Book Now</button>
+        </form>
+      </fieldset>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+
+
+</main>
+
+
+<style>
+/* ===== FOOTER SECTION 1 ===== */
+main.footer {
+  padding: 50px;
+  background: #1B3D2F;
+  display: flex;
+  flex-wrap: wrap;      /* responsive rows */
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer_container {
+  width: 100%;
+}
+
+.image img {
+  height: 100px;
+  width: auto;
+}
+
+.image {
+  margin: 20px;
+}
+
+.image2 img {
+  max-width: 150px;
+  height: auto;
+}
+
+.about-us {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #f0eee8;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.text {
+  font-size: 18px;
+  color: #f0eee8;
+  margin-top: 5px;
+}
+
+/* ===== FOOTER SECTION 2 ===== */
+main.footer2 {
+  padding: 40px 20px;
+  background: #1B3D2F;
+  display: flex;
+  flex-wrap: wrap;      /* responsive */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.icons a {
+  font-size: 30px;
+  color: #CBB48A;
+  margin: 0 15px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.icons a:hover {
+  color: #ffffff;
+}
+
+.text2 a {
+  font-size: 18px;
+  color: #CBB48A;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.text2 a:hover {
+  color: #ffffff;
+}
+
+.text3 {
+  font-size: 18px;
+  color: #CBB48A;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  main.footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .row {
+    min-width: 140px;
+  }
+
+  .about-us {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main.footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .image img {
+    height: 80px;
+  }
+
+  .about-us {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .icons a {
+    font-size: 26px;
+  }
+
+  .text2 a,
+  .text3 {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+#location{
+scroll-margin-top: 180px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* optional: keeps default text color */
+}
+
+
+}
+</style>
+
+<div class="footer_container">
+  <main class="footer" id="contact">
+
+    <div class="image"><img src="logo.png"></div>
+
+    <div class="row">
+      <div class="about-us">ABOUT US</div>
+      <div class="text"><a href="Apply.html">Apply</a></div>
+      <div class="text"><a href="Main(midterm).html#location">Location</a></div>
+    </div>
+
+    <div class="row">
+      <div class="about-us">MENU</div>
+      <div class="text"><a href="menu.html">Menu</a></div>
+      <div class="text"><a href="Nutritional Info.html">Nutritional</a></div>
+      <div class="text"><a href="Nutritional Info.html">Allergens</a></div>
+    </div>
+
+    <div class="row">
+      <div class="about-us">MORE</div>
+      <div class="text"><a href="on_the_go.html">BOOK NOW!</a></div>
+      <div class="text"><a href="Main(midterm).html#rate">Rate Us</a></div>
+    </div>
+
+    <div class="row image2">
+      <img src="items.gif" alt="animation">
+    </div>
+
+  </main>
+</div>
+
+<main class="footer2">
+  <div class="icons">
+     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://instagram.com/samrenly.cruzado" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/samrenly.cruzado" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <div class="text2">
+    <a href="#">Terms and Conditions</a>
+  </div>
+
+  <div class="text3">
+    © 2025 Le Séquoia | Crafted with passion and flavor
+  </div>
+</main>
+</main>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".menunav .button");
+  const sections = document.querySelectorAll("h2.title");
+
+  // Scroll spy effect (keeps button active when section is in view)
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 200;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    buttons.forEach(btn => {
+      btn.classList.remove("active");
+      const link = btn.querySelector("a");
+      if (link.getAttribute("href") === "#" + current) {
+        btn.classList.add("active");
+      }
+    });
+  });
+
+  // Make clicked button turn gold immediately
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function() {
+      buttons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+
+
+window.addEventListener("scroll", () => {
+  const bg = document.querySelector(".nav-bg");
+  if (window.scrollY > 10) {
+    bg.classList.add("scrolled");
+  } else {
+    bg.classList.remove("scrolled");
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

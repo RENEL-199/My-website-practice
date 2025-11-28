@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutritional Info</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@600&family=Great+Vibes&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+      font-family: 'Poppins', 'Cormorant Garamond', serif;
+      background-color: #DFF5E0;
+      color: #2C2C2C;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInPage 1.5s ease forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+       width: 93%;
+        height:3%;
+      z-index: 1000;
+      background:#1B3D2F ;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border-radius: 25px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-logo {
+      height: 45px;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-text {
+      color: #EAD9B7;
+      font-family: 'Great Vibes', cursive;
+      font-size: 25px;
+      letter-spacing: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover {
+      color: #EAD9B7;
+      border-bottom: 2px solid #EAD9B7;
+    }
+
+    .rate-btn {
+      background: #EAD9B7;
+      border: none;
+      color: #2C2C2C;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .rate-btn:hover {
+      background: #CBB48A;
+    }
+    main {
+      padding: 20px;
+      background: #DFF5E0;
+    }
+
+    </style>
+    </head>
+
+<body>
+<div class="nav-bg"></div>
+
+<style>
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      background: linear-gradient(90deg, #2B4D3E, #2E5339);
+      color: #EAD9B7;
+      padding: 20px 100px;
+      height: 65px;
+      animation: fadeIn 1s ease;
+    }
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      font-family: 'Cinzel', serif;
+      font-size: 40px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: #EAD9B7;
+    }
+
+</style>
+<main class="banner">
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="nav-logo">
+      <span class="nav-text">Le Séquoia</span>
+    </div>
+
+    <div class="nav-links">
+    <a href="Main(midterm).html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="on_the_go.html">Book A Table</a>
+      <a href="#contact">Contact</a>
+      <button class="rate-btn" onclick="location.href='Main(midterm).html#rate'">Rate Us</button>
+    </div>
+  </nav>
+    <div class="banner-text"> Nutrition Information </div>
+</main>
+
+<style>
+main.body {
+  font-family: 'Poppins', 'Cormorant Garamond', serif;
+  background-color: #DFF5E0;
+  color: #2C2C2C;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInPage 1.5s ease forwards;
+}
+
+.text-image-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 80px;
+  background: #DFF5E0;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.section-image {
+  width: 450px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.text-block {
+  max-width: 500px;
+  text-align: left;
+  flex: 1;
+}
+
+.text-block h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #1B3D2F;
+  margin-bottom: 20px;
+}
+.pdf-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.pdf-object {
+  width: 100%;
+  max-width: 900px; /* responsive max width */
+  height: 600px;    /* taller for better readability */
+  border: 2px solid #CBB48A;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+form textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 160px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: vertical; /* allows vertical resizing only */
+  margin-bottom: 15px;
+}
+
+form .button {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 15px;
+  padding: 12px 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-size: 18px;
+  color: #1B3D2F;
+  border: none;
+}
+
+form .button:hover {
+  background: #CBB48A;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+</style>
+
+<main class="body">
+
+
+  <section class="text-image-section">
+
+   <div class="text-block">
+    <h2>FRESH, HEALTHY, & DELICIOUS</h2>
+    <p>
+      Our menu is filled with wholesome, flavorful dishes designed to suit a wide range of diets. Every plate is crafted with fresh ingredients and balanced flavors to give you a healthy, satisfying dining experience.
+      At Le Seqiuoa, we take pride in serving food that’s both nourishing and unforgettable.
+    </p>
+  </div>
+    <img src="ds2.png" alt="Delicious Food" class="section-image">
+
+    <div class="text-block">
+      <h2>Do You Have Any Allergy?</h2>
+      <form>
+        <textarea id="futureWeb" name="the_future_web" rows="8" cols="70" placeholder="Input it here..."></textarea>
+
+  <button class="button"  onclick="alert('Thank You for letting us know!')"> Submit</button>
+        <input class="button" type="reset" value="Reset Form">
+      </form>
+    </div>
+  </section>
+
+
+
+<div class="pdf-container">
+  <object data="nutri.pdf" type="application/pdf" class="pdf-object">
+    <p>Your browser does not support PDFs.
+      <a href="nutri.pdf" target="_blank">Download the file instead.</a>
+    </p>
+  </object>
+</div>
+
+
+
+
+
+</main>
+
+
+<style>
+/* ===== FOOTER SECTION 1 ===== */
+main.footer {
+  padding: 50px;
+  background: #1B3D2F;
+  display: flex;
+  flex-wrap: wrap;      /* responsive rows */
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer_container {
+  width: 100%;
+}
+
+.image img {
+  height: 100px;
+  width: auto;
+}
+
+.image {
+  margin: 20px;
+}
+
+.image2 img {
+  max-width: 150px;
+  height: auto;
+}
+
+.about-us {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #f0eee8;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.text {
+  font-size: 18px;
+  color: #f0eee8;
+  margin-top: 5px;
+}
+
+/* ===== FOOTER SECTION 2 ===== */
+main.footer2 {
+  padding: 40px 20px;
+  background: #1B3D2F;
+  display: flex;
+  flex-wrap: wrap;      /* responsive */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.icons a {
+  font-size: 30px;
+  color: #CBB48A;
+  margin: 0 15px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.icons a:hover {
+  color: #ffffff;
+}
+
+.text2 a {
+  font-size: 18px;
+  color: #CBB48A;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.text2 a:hover {
+  color: #ffffff;
+}
+
+.text3 {
+  font-size: 18px;
+  color: #CBB48A;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  main.footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .row {
+    min-width: 140px;
+  }
+
+  .about-us {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main.footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .image img {
+    height: 80px;
+  }
+
+  .about-us {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .icons a {
+    font-size: 26px;
+  }
+
+  .text2 a,
+  .text3 {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+#location{
+scroll-margin-top: 180px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* optional: keeps default text color */
+}
+
+
+}
+</style>
+
+<div class="footer_container">
+  <main class="footer" id="contact">
+
+    <div class="image"><img src="logo.png"></div>
+
+    <div class="row">
+      <div class="about-us">ABOUT US</div>
+      <div class="text"><a href="Apply.html">Apply</a></div>
+      <div class="text"><a href="Main(midterm).html#location">Location</div>
+    </div>
+
+    <div class="row">
+      <div class="about-us">MENU</div>
+      <div class="text"><a href="menu.html">Menu</a></div>
+      <div class="text"><a href="Nutritional Info.html">Nutritional</a></div>
+      <div class="text"><a href="Nutritional Info.html">Allergens</a></div>
+    </div>
+
+    <div class="row">
+      <div class="about-us">MORE</div>
+      <div class="text"><a href="on_the_go.html">BOOK NOW!</a></div>
+      <div class="text"><a href="Main(midterm).html#rate">Rate Us</a></div>
+    </div>
+
+    <div class="row image2">
+      <img src="items.gif" alt="animation">
+    </div>
+
+  </main>
+</div>
+
+<main class="footer2">
+  <div class="icons">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=samrenlyc@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://instagram.com/samrenly.cruzado" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/samrenly.cruzado" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <div class="text2">
+    <a href="#">Terms and Conditions</a>
+  </div>
+
+  <div class="text3">
+    © 2025 Le Séquoia | Crafted with passion and flavor
+  </div>
+</main>
+
+</main>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".menunav .button");
+  const sections = document.querySelectorAll("h2.title");
+
+  // Scroll spy effect (keeps button active when section is in view)
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 200;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    buttons.forEach(btn => {
+      btn.classList.remove("active");
+      const link = btn.querySelector("a");
+      if (link.getAttribute("href") === "#" + current) {
+        btn.classList.add("active");
+      }
+    });
+  });
+
+  // Make clicked button turn gold immediately
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function() {
+      buttons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
+
+
+window.addEventListener("scroll", () => {
+  const bg = document.querySelector(".nav-bg");
+  if (window.scrollY > 10) {
+    bg.classList.add("scrolled");
+  } else {
+    bg.classList.remove("scrolled");
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
